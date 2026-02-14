@@ -5,20 +5,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
 
 <style>
+	* {
+    box-sizing: border-box;
+	}
 	body {
 		background: linear-gradient(to top, #9E63FF 0%, #f87aff 80%);	
 		margin: 0;
 	} #page {
 		width: 928px;
-		height: 1228px;
 		margin: 0 auto;
 		padding: 48px;
-	} #banner-container {
+	} #banner-container { /*???*/
 		width: 100%;
-		height: 150px;
+		height: 130px;
 		overflow: hidden;
 		position: relative;
-	} #banner {
+	} #banner { /*SPACE PHOTO HEADER*/
 		width: 100%; 
 		height: 100%;
 		object-fit: cover; 
@@ -38,13 +40,13 @@
 		z-index: 1;
 	} header .title-text {
 		position: relative;
-		color:#FFF04D;
+		color:#FFF04D; /*COLOR YELLOW*/
 		z-index: 2;
 	} nav {
 		width: 100%;
 		text-align: center;
 		margin: 0px;
-		border: 1px solid #9E63FF;
+		border: 1px solid #9E63FF; /*COLOR PURPLE*/
 		background-color: #9E63FF;
 	} nav ul {
 		padding: 0;
@@ -67,19 +69,50 @@
 		color: #FFF04D;
 		z-index: 1;
 	} p {
-		font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; 
+		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 
 		text-align: center; 
 		font-size: 14pt;
 		line-height: 1.4em;
 		width: 828px;
-		margin: 0 auto;
-		
+		margin: 0 auto;	
 	} video {
 		display: block;
 		width: 60%;
 		margin: 32px auto 0;
 		border: 1px solid dimgray;
 		box-shadow: 2px 3px 6px;
+	} .container { /*BLACK CONTAINER*/
+		display: flex;
+		flex-wrap: wrap;
+		background-color:#232323;
+		margin: 60px;
+		justify-content: space-evenly; 
+		align-items: flex-start;
+		align-content: center; 
+		gap: 20px;
+	} .container div { /*ITEMS IN CONTAINER*/
+		background-color: #FFF04D;
+		margin: 10px;
+		padding: auto; 
+		font-size: 40px;
+	} .container figure {
+		margin: 10px;
+		text-align: center;
+		background-color: #FFF04D;
+		padding: 3px;
+		border-radius: 6px;
+		box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	} .container figure img {
+		width: 320px;
+		height: auto;
+		display: block;
+	} .container figure figcaption {
+		font-family: 'Amarante', cursive;
+		margin-top: 5px;
+		font-size: 14pt;
 	}
 </style>
 </head>
@@ -90,18 +123,18 @@
 	</div>
 <nav>
   <ul>
-				<li>
-					<span class="shadow-text">Home</span>
-					<span class="title-text">Home</span>
-				</li>
-				<li>
-					<span class="shadow-text">About</span>
-					<span class="title-text">About</span>
-				</li>
-				<li>
-					<span class="shadow-text">Contact</span>
-					<span class="title-text">Contact</span>
-				</li>
+	<li>
+		<span class="shadow-text">Home</span>
+		<span class="title-text">Home</span>
+	</li>
+	<li>
+		<span class="shadow-text">About</span>
+		<span class="title-text">About</span>
+	</li>
+		<li>
+		<span class="shadow-text">Contact</span>
+		<span class="title-text">Contact</span>
+		</li>
   </ul>
 		</nav>
 			<header>
@@ -109,10 +142,49 @@
 				<span class="title-text">ARCANART</span>
 			</header>
 	<div id="page">
-	  <p>This website serves as a portfolio and online archive, showcasing completed works, original artwork, written works, and conceptual projects. Displaying a range of creative disciplines, including visual design, storytelling, and speculative ideas, with a focus on clarity, craft, and thoughtful execution. The work presented here reflects an ongoing exploration of form, narrative, and world-building, and is intended to provide insight into both finished pieces and developing concepts.</p>
+	  <p>This website serves as a portfolio and online archive, showcasing completed works, original artwork, written works, and conceptual projects. Displaying a range of creative disciplines, including visual design, storytelling, and speculative ideas, with a focus on clarity, craft, and thoughtful execution. The work presented here reflects an ongoing exploration of form, narrative, and world-building, and is intended to provide insight into both finished pieces and developing concepts of an ongoing world-building story project.</p>
 	<video poster= "home-video-thumbnail.jpg" controls>
 	<source src="home-video.mp4">
 	</video>
 	</div>
+	<div class= "container">
+		<figure>
+			<a href="luna-thumb.jpg" target="_blank">
+			<img src="luna-thumb.jpg" alt="Warrior Knight of the Night"/>
+			</a>
+				<figcaption>Luna the Dark Star </figcaption>
+		</figure>
+		<figure>
+   			 <a href="luna-twilight-thumb.jpg" target="_blank">
+     		 <img src="luna-twilight-thumb.jpg" alt="Cunning Thief of the Night Thumbnail"/>
+  			 </a>
+				<figcaption>Luna, Thief of Twilight</figcaption>
+		</figure>
+		<figure>
+   			 <a href="sol-thumb.jpg" target="_blank">
+     		 <img src="sol-thumb.jpg" alt="Warrior Knight of the Light Thumbnail"/>
+  			 </a>
+				<figcaption>Sol the Light Star</figcaption>
+		</figure>
+ 		<figure>
+   			 <a href="sol-aurora-thumb.jpg" target="_blank">
+     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
+  			 </a>
+				<figcaption>Sol, Agent of Aurora</figcaption>
+		</figure>
+		<figure>
+   			 <a href="sol-aurora-thumb.jpg" target="_blank">
+     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
+  			 </a>
+				<figcaption>Placeholder Example of Flex Wrap</figcaption>
+		</figure>
+		<figure>
+   			 <a href="sol-aurora-thumb.jpg" target="_blank">
+     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
+  			 </a>
+				<figcaption>Placeholder Example of Flex Wrap</figcaption>
+		</figure>
+</div>
+
 </body>
 </html>
