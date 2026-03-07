@@ -5,16 +5,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
 
 <style>
-	* {
-    box-sizing: border-box;
-	}
-	html, body {
-		height: 100%;
-		margin: 0
-	}
-	body {
+	* { box-sizing: border-box;
+	} body {
 		background: linear-gradient(to top, #9E63FF 0%, #f87aff 80%);	
-		background-repeat
 		margin: 0;
 	} #page {
 		width: 928px;
@@ -44,7 +37,7 @@
 		right: 5px; 
 		font-size: 48pt; 
 		font-family: 'Amarante', cursive;
-		color: #00000;
+		color: #000;
 		z-index: 1;
 	} header .title-text {
 		position: relative;
@@ -112,8 +105,45 @@
 		line-height: 1.4em;
 		width: 828px;
 		margin: 0 auto;	
+	}.contact-container {
+		width:1100px;
+		margin:40px auto 0 auto;
+		display:flex;
+		align-items:flex-start;
+		gap:40px;
+	} form {
+		background: white;
+		border: 2px solid black;
+		box-shadow: 0 0 6px #FFF04D,0 0 12px #FFF04D;
+		padding: 18px;
+		width: 828px;
+		font-family: Cambria,serif;
+	} fieldset {
+		border: none;
+		margin-bottom: 12px;
+	} label {
+		display: block;
+		margin-bottom: 4px;
+	} input, textarea {
+		width: 100%;
+		padding: 6px;
+		margin-bottom: 12px;
+		font-family: Cambria,serif;
+	} textarea {
+		resize: vertical;
+		height: 120px;
+	} button {
+		width: 100%;
+		padding: 8px;
+		font-size: 14pt;
+		background: #9E63FF;
+		border: none;
+		color: white;
+		cursor: pointer;
+	} button:hover {
+	background: #f87aff;
 	} #page table {
-		margin: 20px auto;
+		margin: 0 auto;
 		border-collapse: collapse;
 		box-shadow: 0 0 6px #FFF04D,
 					0 0 12px #FFF04D;
@@ -122,11 +152,32 @@
 		padding: 8px 12px;
 		border: 2px solid black;
 		background-color:#FFF;
+	} contact form {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		background: #FFF;
+		border: 2px solid black;
+		box-shadow: 0 0 6px #FFF04D,
+				    0 0 12PX #FFF04FD;
+		margin: 20px auto;
+		padding: 8px 12px;
+	} fieldset {
+		margin-top: 18px;
+	} #personal input, #submit{
+		width: 100%;
+		height: 24px;
+		margin-bottom: 12px;
+	} input[type="text"] {
+		width: 96%;
+		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 	
+		margin-top: 6px;
 	}
 </style>
 </head>
 
 <body>
+	
 	<div id="banner-container">
 		<img id="banner" src="pexels-miriamespacio-110854.jpg" alt="Space banner image"/> 
 	</div>
@@ -166,36 +217,49 @@
 			</header>
 	<div id="page">
 	  <p>Have any questions you want to ask me or just want to find me on social media? Feel free to check out or reach out to me here!</p>
-<table>
-    <thead>
-        <tr>
-            <th colspan="2">Find Me Here!</th>
-        </tr>
-        <tr>
-            <th>Social Media</th>
-            <th>Account</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Gmail</td>
-            <td>meta.noiya000@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Instagram</td>
-            <td>meta.noiya000</td>
-        </tr>
-        <tr>
-            <td>Bluesky</td>
-            <td>@metanoiya000.bsky.social</td>
-        </tr>
-        <tr>
-            <td>Tumblr</td>
-            <td>@meta-noiya</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
+		<div class="contact-container">
+			<form>
+				<fieldset>
+					<label>Name</label>
+					<input type="text" required>
+					<label>Email</label>
+					<input type="email" required>
+					<label>Subject</label>
+					<input type="subject" required>
+					<label>Message</label>
+					<textarea required></textarea>
+				</fieldset>
+				<button type="submit">Send Message</button>
+			</form>
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Find Me Here!</th>
+					</tr>
+					<tr>
+						<th>Social Media</th>
+						<th>Account</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Gmail</td><td>meta.noiya000@gmail.com</td>
+					</tr>
+					<tr>
+						<td>Instagram</td>
+						<td>meta.noiya000</td>
+					</tr>
+					<tr>
+						<td>Bluesky</td><td>@metanoiya000.bsky.social</td>
+					</tr>
+					<tr>
+						<td>Tumblr</td>
+						<td>@meta-noiya</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
+
 </html>
