@@ -1,0 +1,248 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>ABOUT - ARCANART</title>
+<link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+	* {
+    box-sizing: border-box;
+	}html, body {
+		height: 100%;
+		margin: 0
+	} body {
+		background: url(pexels-pixabay-235985.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		margin: 0;
+	} #page {
+		width: 928px;
+		margin: 0 auto;
+		padding: 48px;
+	} #banner-container {
+		width: 100%;
+		height: 130px;
+		overflow: hidden;
+		position: relative;
+	} #banner { /*SPACE PHOTO HEADER*/
+		width: 100%; 
+		height: 100%;
+		object-fit: cover; 
+	} header a {
+		text-decoration: none;
+		color: inherit;
+	} header {
+		position: absolute;
+		top: 10px;
+		right: 20px; 
+		font-size: 48pt; 
+		font-family: 'Amarante', cursive;
+	} header .shadow-text{
+		position: absolute;
+		top: 2px;
+		right: 5px; 
+		font-size: 48pt; 
+		font-family: 'Amarante', cursive;
+		color: black;
+		z-index: 1;
+	} header .title-text {
+		position: relative;
+		color:#FFF04D; /*COLOR YELLOW*/
+		z-index: 2;
+	} nav {
+		width: 100%;
+		text-align: center;
+		margin: 0px;
+		border: 1px solid #9E63FF; /*COLOR PURPLE*/
+		background-color: #9E63FF;
+	} nav ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	} nav li {
+		position: relative;
+    	display: inline-block; 
+		margin: 0 40px;     
+		font-family: 'Amarante', cursive;
+		font-size: 18pt;
+		z-index: 2;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+	} nav li:hover {
+		transform: scale(1.1);
+	} nav a { 
+		display:  inline-block;
+		position: relative;
+		text-decoration: none;
+		color: #FFF04D;
+		text-shadow: -3px 0px 0 black;
+	} nav li.dropdown {
+  		position: relative;
+	} nav li .dropdown-menu {
+		display: none;
+		position: absolute;
+		top: 100%; 
+		left: 50%;
+		transform: translateX(-50%); 
+		background-color: #232323;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		min-width: 100%;  
+		z-index: 10;
+	} nav li .dropdown-menu li a {
+		display: block;
+		width: 100%;
+		padding: 6px 6px;
+		color: #FFF04D;
+		text-decoration: none;
+		font-family: 'Amarante', cursive;
+		font-size: 16pt;
+		box-sizing: border-box;
+	} nav li.dropdown:hover .dropdown-menu {
+		display: block;
+	} nav li .dropdown-menu li a:hover {
+		background-color: #f87aff;
+	} #title {
+		font-family: 'Amarante', cursive;
+		font-size: 28pt;
+		text-shadow: -4px 0px 0 black;
+		text-align: center; 
+		display: block;      
+		margin: 24px auto 16px auto;
+		width: 100%;
+		color: black;
+		text-shadow: 0 0 6px #FFF04D, 0 0 12px #FFF04D;
+	} .pullquote {
+		font-family: 'Amarante', cursive;
+		font-size: 22pt;
+		font-style: italic;
+		color: white;
+		text-align: center;
+		width: 600px;
+		margin: 40px auto;
+		padding: 20px;
+		border-top: 2px solid #FFF04D;
+		border-bottom: 2px solid #FFF04D;
+		text-shadow: 0 0 6px #FFF04D;
+	} p {
+		color: black;
+		font-family:'Rosarivo',serif;
+		text-align: left; 
+		font-size: 14pt;
+		font-weight: 600;
+		line-height: 1.6em;
+		letter-spacing: 1px;
+		width: 828px;
+		margin: 0 auto;	
+		margin-bottom: 24px;
+    	text-shadow: 0 0 6px #FFF6CF, 0 0 12px #FFF6CF;
+	} .term {
+		font-family: 'Almendra' , serif;
+		display: block;
+		text-align: left;
+		text-decoration: underline;
+		font-weight: 700;
+		font-size: 24pt;
+		margin-top: 20px;
+		margin-bottom: 6px;
+		text-shadow: 0 0 6px #FFF04D, 0 0 12px #FFF04D;
+	} img {
+		width: 808px;
+	}
+</style>
+</head>
+
+<body>
+	<div id="banner-container">
+		<img id="banner" src="pexels-miriamespacio-110854.jpg" alt="Space banner image"/> 
+	</div>
+<nav>
+  <ul>
+	<li>
+		<a href= "index.html">
+			<span class="title-text">Home</span>
+	  	</a>
+	</li>
+    <li class="dropdown">
+      <a href="#"><span class="title-text">Projects</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="stellargy_magic_system.html">Stellargy Magic System</a></li>
+        <li><a href="masqueraid_party.html">Masqueraid Party</a></li>
+        <li><a href="project3.html">Karma</a></li>
+        <li><a href="project4.html">Kaleidoscope</a></li>
+      </ul>
+    </li>
+	<li>
+		<a href= "about.html">
+			<span class="title-text">About</span>
+		</a>
+	</li>
+	<li>
+		<a href= "contact.html">
+			<span class="title-text">Contact</span>
+		</a>
+	</li>
+  </ul>
+		</nav>
+			<header>
+				<a href="index.html">
+					<span class="shadow-text">ARCANART</span>
+					<span class="title-text">ARCANART</span>
+				</a>
+			</header>
+	<div id="page">
+		<h2 id="title">Stellargy Magic System</h2>
+<div class="pullquote">
+"The manipulation over reality through humanity's legends and achievements &mdash; granted virtue by the stars."
+</div>
+<h3 class="term">Major Arcana:</h3>
+<p>
+The 12 magic principles are called the Major Arcana. They consist of Mind, Power, Life, Death, Virtue, Vice, Light, Dark, Space, Time, Matter, and Void. Under the Major Arcana, subclasses called Minor Arcana such as the Aspects and the Variant would later form. The 12 Major Arcana harboured 2 secret Arcanas, true reflections of Calamity and Serenity, the 0th Arcana Order, and the 13th Arcana Chaos.
+<br><br>
+Chaos makes up the 12 Arcanas, whereas Order makes up 0 of them.
+</p>
+	<img src="zodiac_arcana.png" alt="Zodiac Wheel of the Arcana">	 
+<h3 class="term">Minor Arcana:</h3>
+<p>
+Within the Major Arcana are smaller subclasses of magic. They are composed of the Aspects and the Variant. Aspects are composed of 2 or more Elemental Arcanas (Ex: Air + Water= Ice). Variant are farther derivatives of the original Element (Ex: Fire → Explosive)
+</p>
+<h3 class="term">Ikhor:</h3>
+<p>
+Ikhor (Eye-core) is the name of the magical energy used by Thespians/Stars in Arkhan. Similar to Karma, but exclusive to Thespians. Casting Flairs uses up Ikhor. Ikhor is an energy produced by the Reyna organ inside Arkhanians. However, it is incredibly rare for an Arkhanian to be born without Ikhor and thus cannot do Stellargy. Ikhor can be manipulated and shaped as well as channelled into objects, items, as well as elements. When Thespians use Stellargy to manipulate elements, they are really just channelling their Ikhor into it and controlling it from within. Controlling and manipulating Ikhor is like an extension of an additional limb. Improving one’s mental and physical state increases their Ikhor reserves.
+</p>
+
+<p>
+Ikhor and Stamina are separate but connected. Ikhor acts as a passive energy well, charging over time by taking a portion of Stamina and converting it into Ikhor. Ikhor “steals” from Stamina creating a reservoir, then Stamina “creates” more energy to replenish the lost energy. Stamina is physical energy used to perform physical actions. Ikhor is magical energy used to perform Flairs. Thespians and Stars have both. Ikhor regenerates slower and is a much smaller reserve than Stamina, however it has more powerful effects. If Thespians run out of Ikhor, they still have their Stamina to do physical tasks. However, if Thespians run out of Stamina, they are unable to perform Flairs, as Stamina is needed to convert into Ikhor, but not the other way around.
+</p>
+
+<p>
+Ikhor in actuality is the blood of the Chaos god Calamity. Thus when you are casting Flairs, you are actually creating chaos.
+</p>
+
+<h3 class="term">Stellargy:</h3>
+<p>
+Stellargy is the practice of studying the Arcana and casting Flairs. People who study and practice Stellargy are called Thespians, while the gods of Stellargy are called Stars. Originally humans were not meant to learn or be able to use Stellargy due to not having any Ikhor. The ancestors of Arkhan sought great power like the Stars that governed them, so they sought the dead corpse of Reyna Gaius, Mother Nature, after her battle against Death, the Grand Reaper. In an unholy ritual dubbed by Arkhan historians and conspiracists as “The Black Banquet”, the ancestors consumed her flesh, leading to a mutation in their bodies that caused the growth of the Reyna organ, a tumorous organ attached to their heart. This led to the ability to produce Ikhor.
+</p>
+
+<h3 class="term">Stellargy and Flairs:</h3>
+<p>
+The study and practice of magic spells and the Arcana in Arkhan is called Stellargy. The spells themselves are called Flairs. Names have power. Flairs are spells holding the names of famous humans, places, events, and even ideas (Ex: Oppenheimer, Olympus, Ragnarok, Laplace’s Demon). Whether the legend or history behind the name is true or exists inside reality is not important, for it exists based on how the world remembers or perceives it.
+</p>
+
+<p>
+Even fictional characters can become a Flair as long as humans thought of it. The cognition, fantasies, and memories of humanity are so powerful that they alter the reality of the world around them, creating Flairs. Flairs are actually records stored in the Akashic Records. Each time a grand achievement is made or a legend is born, a new star in space is born.
+</p>
+
+</div>
+
+</body>
+</html>
