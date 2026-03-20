@@ -10,7 +10,11 @@
 	}
 	body {
 		background: linear-gradient(to top, #9E63FF 0%, #f87aff 80%);	
-		margin: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		margin: 0
 	} #page {
 		max-width: 928px;
 		margin: 100%;
@@ -151,26 +155,16 @@
 		font-family: 'Amarante', cursive;	
 		margin-top: 5px;
 		font-size: 14pt;
-	}
-	@media (max-width: 750px) {
-
-    body {
+	} @media (max-width: 750px) 
+	{ body {
         font-size: 18px;
-    }
-
-    p {
+    } p {
         line-height: 1.7em;
-    }
-
-    .container figure img {
+    } .container figure img {
         width: 100%;
-    }
-
-    video {
+    } video {
         width: 100%;
-    }
-
-    .container {
+    } .container {
         margin: 20px;
     }
 </style>

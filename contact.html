@@ -8,6 +8,10 @@
 	* { box-sizing: border-box;
 	} body {
 		background: linear-gradient(to top, #9E63FF 0%, #f87aff 80%);	
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
 		margin: 0;
 	} #page {
 		width: 928px;
@@ -172,7 +176,18 @@
 		width: 96%;
 		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 	
 		margin-top: 6px;
-	}
+	} @media (max-width: 750px) 
+	{ body {
+        font-size: 18px;
+    } p {
+        line-height: 1.7em;
+    } .container figure img {
+        width: 100%;
+    } video {
+        width: 100%;
+    } .container {
+        margin: 20px;
+    }
 </style>
 </head>
 
