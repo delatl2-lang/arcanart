@@ -12,8 +12,8 @@
 		background: linear-gradient(to top, #9E63FF 0%, #f87aff 80%);	
 		margin: 0;
 	} #page {
-		width: 928px;
-		margin: 0 auto;
+		max-width: 928px;
+		margin: 100%;
 		padding: 48px;
 	} #banner-container {
 		width: 100%;
@@ -105,7 +105,7 @@
 		text-align: center; 
 		font-size: 14pt;
 		line-height: 1.4em;
-		width: 828px;
+		max-width: 828px;
 		margin: 0 auto;	
 	} video {
 		display: block;
@@ -152,6 +152,27 @@
 		margin-top: 5px;
 		font-size: 14pt;
 	}
+	@media (max-width: 750px) {
+
+    body {
+        font-size: 18px;
+    }
+
+    p {
+        line-height: 1.7em;
+    }
+
+    .container figure img {
+        width: 100%;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .container {
+        margin: 20px;
+    }
 </style>
 </head>
 
