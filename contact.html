@@ -13,10 +13,6 @@
 		background-position: center;
 		background-attachment: fixed;
 		margin: 0;
-	} #page {
-		width: 928px;
-		margin: 0 auto;
-		padding: 48px;
 	} #banner-container {
 		width: 100%;
 		height: 130px;
@@ -102,6 +98,11 @@
 	} nav li .dropdown-menu li a:hover {
 		background-color: #f87aff;
 		color: #FFF;
+	} #page {
+		width: 100%;         
+		max-width: 928px;
+		margin: 0 auto;
+		padding: 48px;
 	} p {
 		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 
 		text-align: center; 
@@ -109,8 +110,15 @@
 		line-height: 1.4em;
 		width: 828px;
 		margin: 0 auto;	
+	} .layout {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 40px;
+		flex-wrap: wrap;
 	}.contact-container {
-		width:1100px;
+		width: 100%;
+		max-width: 100%;
 		margin:40px auto 0 auto;
 		display:flex;
 		align-items:flex-start;
@@ -120,7 +128,8 @@
 		border: 2px solid black;
 		box-shadow: 0 0 6px #FFF04D,0 0 12px #FFF04D;
 		padding: 18px;
-		width: 828px;
+		width: 100%;
+		flex: 2;
 		font-family: Cambria,serif;
 	} fieldset {
 		border: none;
@@ -128,6 +137,14 @@
 	} label {
 		display: block;
 		margin-bottom: 4px;
+	} .field-caption {
+		display: block;
+		font-size: 16pt;
+		color: black; 
+		margin-bottom: 4px;
+		font-family: Cambria, serif;
+		text-align: center;    /* centers the text */
+		font-weight: bold;   
 	} input, textarea {
 		width: 100%;
 		padding: 6px;
@@ -145,37 +162,28 @@
 		color: white;
 		cursor: pointer;
 	} button:hover {
-	background: #f87aff;
-	} #page table {
-		margin: 0 auto;
+		background: #f87aff;
+	} .right-panel {
+		margin-top: 68px;
+		flex: 1 1 300px;
+		min-width: 250px; 
+	} .right-panel table {
+		width: 20px;
 		border-collapse: collapse;
-		box-shadow: 0 0 6px #FFF04D,
-					0 0 12px #FFF04D;
-	} #page table th,
-	#page table td {
+		box-shadow: 0 0 6px #FFF04D, 0 0 12px #FFF04D;
+	} .right-panel th,
+	  .right-panel td {
 		padding: 8px 12px;
 		border: 2px solid black;
-		background-color:#FFF;
-	} contact form {
-		display: flex;
+		background-color: white;
 		justify-content: center;
 		align-items: flex-start;
-		background: #FFF;
-		border: 2px solid black;
-		box-shadow: 0 0 6px #FFF04D,
-				    0 0 12PX #FFF04FD;
-		margin: 20px auto;
-		padding: 8px 12px;
-	} fieldset {
-		margin-top: 18px;
-	} #personal input, #submit{
-		width: 100%;
-		height: 24px;
-		margin-bottom: 12px;
-	} input[type="text"] {
-		width: 96%;
-		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 	
-		margin-top: 6px;
+		gap: 40px;
+	} .right-panel {
+		width: 300px;
+	} .right-panel table {
+		margin-top: 20px;
+		width: 5%;
 	} @media (max-width: 750px) 
 	{ body {
         font-size: 18px;
@@ -187,7 +195,8 @@
         width: 100%;
     } .container {
         margin: 20px;
-    }
+	}
+}
 </style>
 </head>
 
@@ -230,51 +239,62 @@
 					<span class="title-text">ARCANART</span>
 				</a>
 			</header>
-	<div id="page">
-	  <p>Have any questions you want to ask me or just want to find me on social media? Feel free to check out or reach out to me here!</p>
-		<div class="contact-container">
-			<form>
-				<fieldset>
-					<label>Name</label>
-					<input type="text" required>
-					<label>Email</label>
-					<input type="email" required>
-					<label>Subject</label>
-					<input type="subject" required>
-					<label>Message</label>
-					<textarea required></textarea>
-				</fieldset>
-				<button type="submit">Send Message</button>
-			</form>
-			<table>
-				<thead>
-					<tr>
-						<th colspan="2">Find Me Here!</th>
-					</tr>
-					<tr>
-						<th>Social Media</th>
-						<th>Account</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Gmail</td><td>meta.noiya000@gmail.com</td>
-					</tr>
-					<tr>
-						<td>Instagram</td>
-						<td>meta.noiya000</td>
-					</tr>
-					<tr>
-						<td>Bluesky</td><td>@metanoiya000.bsky.social</td>
-					</tr>
-					<tr>
-						<td>Tumblr</td>
-						<td>@meta-noiya</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</body>
+<div class="layout">
 
+<div id="page">
+
+    <div class="contact-container"> 
+        <form>
+            <fieldset>
+				<small class="field-caption">Have any questions? Feel free to reach out to me here!</small>           
+     <label>Name</label>
+                <input type="text" required>
+                <label>Email</label>
+                <input type="email" required>
+                <label>Subject</label>
+                <input type="text" required> 
+                <label>Message</label>
+                <textarea required></textarea>
+            </fieldset>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<div class="right-panel">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Find Me Here!</th>
+            </tr>
+            <tr>
+                <th>Social Media</th>
+                <th>Account</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gmail</td>
+                <td>meta.noiya000@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Instagram</td>
+                <td>meta.noiya000</td>
+            </tr>
+            <tr>
+                <td>Bluesky</td>
+                <td>@metanoiya000.bsky.social</td>
+            </tr>
+            <tr>
+                <td>Tumblr</td>
+                <td>@meta-noiya</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+			
+</div> <!-- closes .layout -->
+
+</body>
 </html>
