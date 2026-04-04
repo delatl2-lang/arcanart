@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html><head>
 <meta charset="utf-8">
 <title>ARCANART</title>
@@ -17,7 +17,7 @@
 		margin: 0
 	} #page {
 		max-width: 928px;
-		margin: 100%;
+		margin: 0 auto;
 		padding: 48px;
 	} #banner-container {
 		width: 100%;
@@ -115,7 +115,6 @@
 		display: block;
 		width: 30%;
 		margin: 32px auto 0;
-		border: 1px solid dimgray;
 		box-shadow: 0 0 6px #FFF04D,
 					0 0 12px #FFF04D;
 	} .container { /*BLACK CONTAINER*/
@@ -131,15 +130,15 @@
 					0 0 12px #FFF04D;
 	} .container div { /*ITEMS IN CONTAINER*/
 		background-color: #FFF04D;
-		margin: 10px;
-		padding: auto; 
+		margin: 0;
+		padding: 0; 
 		font-size: 40px;
 	} .container figure {
-		margin: 10px;
+		margin: 0;
 		text-align: center;
 		background-color: #FFF04D;
 		padding: 3px;
-		border-radius: 6px;
+		border-radius: 0;
 		box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 		display: flex;
 		flex-direction: column;
@@ -155,6 +154,42 @@
 		font-family: 'Amarante', cursive;	
 		margin-top: 5px;
 		font-size: 14pt;
+	} .carousel {
+		overflow: hidden;
+		max-width: 100%;
+		background-color: #232323;
+	    margin: 60px auto;
+	    box-shadow: 0 0 6px #FFF04D,
+				  0 0 12px #FFF04D;
+   } .carousel-track { /* MOVING TRACK */
+	   display: flex;
+	   flex-wrap: nowrap;
+	   width: max-content; 
+	   animation: scroll 50s linear infinite;
+   } .carousel-track figure { /* EACH SLIDE */
+       min-width: 750px;
+       flex-shrink: 0;
+       background-color: #FFF04D;
+       border-radius: 0;
+       text-align: center;
+       margin: 0;
+       padding: 0;
+	} .carousel-track img { /* IMAGES */
+	   width: 750px;
+	   height: 587.5px;
+	   display: block;
+	   transition: transform 0.3s ease;
+	} .carousel-track img:hover {
+	   transform: scale(1.03);
+	} .carousel-track figcaption { /* CAPTION */
+	  font-family: 'Amarante', cursive;
+	  margin-top: 5px;
+	  font-size: 14pt;
+	} @keyframes scroll { /* ANIMATION */
+	  0%   { transform: translateX(0); }
+	  100% { transform: translateX(-50%); }
+	} .carousel:hover .carousel-track { /* PAUSE ON HOVER */
+	  animation-play-state: paused;
 	} @media (max-width: 750px) 
 	{ body {
         font-size: 18px;
@@ -167,6 +202,7 @@
     } .container {
         margin: 20px;
     }
+
 </style>
 </head>
 
@@ -211,43 +247,65 @@
 	<video poster= "home-video-thumbnail.jpg" controls>
 	<source src="home-video.mp4">
 	</video>
-	<div class= "container">
-		<figure>
-			<a href="luna-thumb.jpg" target="_blank">
-			<img src="luna-thumb.jpg" alt="Warrior Knight of the Night"/>
-			</a>
-				<figcaption>Luna the Dark Star </figcaption>
-		</figure>
-		<figure>
-   			 <a href="luna-twilight-thumb.jpg" target="_blank">
-     		 <img src="luna-twilight-thumb.jpg" alt="Cunning Thief of the Night Thumbnail"/>
-  			 </a>
-				<figcaption>Luna, Thief of Twilight</figcaption>
-		</figure>
-		<figure>
-   			 <a href="sol-thumb.jpg" target="_blank">
-     		 <img src="sol-thumb.jpg" alt="Warrior Knight of the Light Thumbnail"/>
-  			 </a>
-				<figcaption>Sol the Light Star</figcaption>
-		</figure>
- 		<figure>
-   			 <a href="sol-aurora-thumb.jpg" target="_blank">
-     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
-  			 </a>
-				<figcaption>Sol, Agent of Aurora</figcaption>
-		</figure>
-		<figure>
-   			 <a href="sol-aurora-thumb.jpg" target="_blank">
-     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
-  			 </a>
-				<figcaption>Placeholder Example of Flex Wrap</figcaption>
-		</figure>
-		<figure>
-   			 <a href="sol-aurora-thumb.jpg" target="_blank">
-     		 <img src="sol-aurora-thumb.jpg" alt="Genius Detective of the Light Thumbnail"/>
-  			 </a>
-				<figcaption>Placeholder Example of Flex Wrap</figcaption>
-		</figure>
+<div class="carousel">
+  <div class="carousel-track">
+
+<figure>
+  <a href="luna-thumb.jpg" target="_blank">
+    <img src="luna-thumb.jpg" alt="Luna the Dark Star"/>
+  </a>
+  <figcaption>Luna the Dark Star</figcaption>
+</figure>
+
+<figure>
+  <a href="luna-twilight-thumb.jpg" target="_blank">
+    <img src="luna-twilight-thumb.jpg" alt="Luna, Thief of Twilight"/>
+  </a>
+  <figcaption>Luna, Thief of Twilight</figcaption>
+</figure>
+
+<figure>
+  <a href="sol-thumb.jpg" target="_blank">
+    <img src="sol-thumb.jpg" alt="Sol the Light Star"/>
+  </a>
+  <figcaption>Sol the Light Star</figcaption>
+</figure>
+
+<figure>
+  <a href="sol-aurora-thumb.jpg" target="_blank">
+    <img src="sol-aurora-thumb.jpg" alt="Sol, Agent of Aurora"/>
+  </a>
+  <figcaption>Sol, Agent of Aurora</figcaption>
+</figure>
+    <!-- Duplicates -->
+<figure>
+  <a href="luna-thumb.jpg" target="_blank">
+    <img src="luna-thumb.jpg" alt="Luna the Dark Star"/>
+  </a>
+  <figcaption>Luna the Dark Star</figcaption>
+</figure>
+
+<figure>
+  <a href="luna-twilight-thumb.jpg" target="_blank">
+    <img src="luna-twilight-thumb.jpg" alt="Luna, Thief of Twilight"/>
+  </a>
+  <figcaption>Luna, Thief of Twilight</figcaption>
+</figure>
+
+<figure>
+  <a href="sol-thumb.jpg" target="_blank">
+    <img src="sol-thumb.jpg" alt="Sol the Light Star"/>
+  </a>
+  <figcaption>Sol the Light Star</figcaption>
+</figure>
+
+<figure>
+  <a href="sol-aurora-thumb.jpg" target="_blank">
+    <img src="sol-aurora-thumb.jpg" alt="Sol, Agent of Aurora"/>
+  </a>
+  <figcaption>Sol, Agent of Aurora</figcaption>
+</figure>
+  </div>
 </div>
 
 </body>
