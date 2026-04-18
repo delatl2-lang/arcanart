@@ -112,37 +112,74 @@
 		display: block;      
 		margin: 24px auto 16px auto;
 		width: 100%;
-	} p {
-		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; 
-		text-align: center; 
-		font-size: 14pt;
-		line-height: 1.4em;
-		width: 828px;
-		margin: 0 auto;	
-	} main {
-		width: 768px;
-		height: 768px;
-		margin: 24px auto;
-		display: grid;
-	  	grid-template-columns: 1fr 1fr;
-  		grid-template-rows: 1fr 1fr 1fr;
-	} main img {
+    } .top-section {
+		display: flex;
+		gap: 40px;
+		margin-bottom: 30px;
+    } .image {
+		flex: 1;
+    } .image img {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;		
-	} @media (max-width: 750px) 
-	{ body {
-        font-size: 18px;
-    } p {
-        line-height: 1.7em;
-    } .container figure img {
-        width: 100%;
-    } video {
-        width: 100%;
-    } .container {
-        margin: 20px;
+		height: auto;
+		display: block;
+    } .text {
+    	flex: 1;
+		text-align: right;
+    }  #main-title {
+		font-family: 'Almendra', serif;
+		display: block;
+		text-align: right;
+		text-decoration: underline;
+		font-weight: 700;
+		font-size: 18pt;
+    } .text h2 {
+		margin-top: 0;
+		font-size: 24px;
+    } .text p {
+		line-height: 1.6;
+		text-align: right;
+   } .bottom-text {
+		font-size: 16px;
+		line-height: 1.6;
+		text-align: center;
+   }.thumbnail-grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 10px;
+		margin-top: 30px;
+  } .thumbnail-grid img {
+	    width: 100%;
+	    height: 100px;
+	    object-fit: cover;
+	    display: block;
+	    cursor: pointer;
+	    transition: 0.2s ease;
+	}.thumbnail-grid img:hover {
+	    transform: scale(1.05);
+	}.thumbnail-grid img.active {
+	    outline: 2px solid black;
+	} #main-desc {
+		color: black;
+		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		text-align: right;
+		font-size: 12pt;
+		font-weight: 600;
+		line-height: 1.6em;
+		text-shadow: 0 0 6px #FFF6CF, 0 0 12px #FFF6CF;
+	}#main-image {
+	   opacity: 1;
+       transition: opacity 0.2s ease;
+    }#main-title {
+	   margin-top: 0;
+	   padding-top: 0;
+	   font-family: 'Almendra', serif;
+	   text-align: right;
+	   text-decoration: underline;
+	   font-weight: 700;
+	   font-size: 20pt;
+	   text-shadow: 0 0 6px #FFF04D, 0 0 12px #FFF04D;
     }
+
 </style>
 </head>
 
@@ -185,15 +222,86 @@
 				</a>
 			</header>
 <div id="page">
-  <h2 id="gallery-title">
-  Masqueraid Party
-  </h2>
-	<div id= "container">
-		<main>
-			<img src="luna-thumb.jpg" alt="Warrior Knight of the Night"/>
-			<img src="sol-thumb.jpg" alt="Warrior Knight of the Light"/>
-			<img src="jakka-thumb.jpg" alt="Pure Heart Professor of Petals"/>
-		</main>
-	</div>
+  <h2 id="gallery-title">Masqueraid Party</h2>
+  <div class="top-section">
+    <div class="image">
+<img id="main-image" src="luna-thumb.jpg" alt="Warrior Knight of the Night"/>
+    </div>
+    <div class="text">
+<h3 id="main-title">Luna the Dark Star</h3>
+<p id="main-desc">
+ A warrior of the night, cloaked in shadow. Luna Evelyn protects any weary travelers of the night. She envelops the weak and scared within her dark shadows, hiding them away from any danger, whilst she quietly dispatches them with her sword and shield. Striking swiftly from the darkness with ruthlessness and cunning, all travelers who walks underneath the moon's light is safe so long as they are guiltless.
+</p>
+    </div>
+  </div>
+  <div class="thumbnail-grid">
+    <img class="active"
+         src="luna-thumb.jpg"
+	   data-full="luna-thumb.jpg"
+       data-title="Luna Evelyn the Dark Star"
+       data-desc="A warrior of the night, cloaked in shadow. Luna Evelyn protects any weary travelers of the night. She envelops the weak and scared within her dark shadows, hiding them away from any danger, whilst she quietly dispatches them with her khopesh and shield. Striking swiftly from the darkness with ruthlessness and cunning, all travelers who walks underneath the moon's light is safe so long as they are guiltless."
+       alt="">    
+  <img src="luna-twilight-thumb.jpg"
+       data-full="luna-twilight-thumb.jpg"
+       data-title="Luna Evelyn the Thief of Twilight"
+       data-desc="The mysterious phantom thief of the night, hiding amongst the shadows. This anonymous figure has haunted the city of Sol Lunar since the early days of its founding. A champion of the poor and the scourge to the rich. The infamous thief is wanted throughout the Arkhan for numerous thefts, yet remains ever elusive from her rival, the great detective, thanks to her skills in deceit and trickery."
+       alt=""> 
+  <img src="sol-thumb.jpg"
+       data-full="sol-thumb.jpg"
+       data-title="Sol Raymond the Light Star"
+       data-desc="A champion of the day, guarded by the light. Sol Raymond lights the way for any traveler that has lost their way. Driving away evil with his blinding light, he seeks out threats and takes them out glamorously in his shining armor and with his claymore. Facing evil head on and with a radiant presence, all travelers who journeys under the sun's light is safe so long as they are virtous."
+       alt="">
+  <img src="sol-aurora-thumb.jpg"
+       data-full="sol-aurora-thumb.jpg"
+       data-title="Sol Raymond the Agent of Aurora"
+       data-desc="The famed detective of the day, always seeking to bring the truth to light. This prominent celebrity has shined his light amongst the city of Sol Lunar since it's glory days. Determined to bring evil to justice, this champion of truth is the scourge of the underworld. The esteemed agent was the closest detective in Arkhan to bring the famous phantom thief to justice, thanks to his presence and detective skills."
+       alt="">
+  <img src="cupid-thumb.jpg"
+       data-full="cupid-thumb.jpg"
+       data-title="Cupid Valentine the Mind Star"
+       data-desc="The brightest mind in Arkhan and keeper of the Lloreum. None is smarter nor wiser than the scholar of the Mind Palace. When not guarding the Mind Palace, Cupid hunts for new knowledge and information. Through her grand library, Arkhan's culture and history are kept safely, along with all the knowledge and stories of the entire world. Her infinite wisdom and unquenchable thirst for knowledge is nothing compared to her endless compassion and love for humanity."
+       alt="">
+  <img src="jakka-thumb.jpg"
+       data-full="jakka-thumb.jpg"
+       data-title="Dr Jakka Randa the Pure Heart Professor"
+       data-desc="A gentle mind surrounded by blooming petals. The esteemed scholar of Arkhan University is said to be the up-and-coming successor of Cupid Valentine, nearly rivaling Cupid in her knowledge and purity. The prestigious professor is unmatched in her fields of pharmaceutical. Seats in her class lectures are highly sought out and competitive. Her soft demeanor and kind heart along with her outstanding intellect makes her highly popular amongst students and staff. However rumors are spreading that she is hiding a dark side and has been secretly developing a new drug with her research."
+       alt="">  
+  <img src="hyde-thumb.jpg"
+       data-full="hyde-thumb.jpg"
+       data-title="Ms Hyde Derangea the Mad Boss"
+       data-desc="An unhinged psyche enveloped by the scent of blood and flowers. The rabid gang leader of the Pink Mist reigns over the drug trade and is responsible for the development and distribution of the volatile drug Catharsis. The notorious boss is undefeated in her trade of drugs and violence. Crossing her and her gang is highly discouraged as encounters with her leaves victims disfigured, injured, or worse- addicted. Her unstable mind and addictive personality, coupled together with her expertise in violence makes her highly feared amongst Arkhan. It is wondered who she keeps inside her weapon of choice, the chained coffin. She was observed entering it, with voices heard arguing from within, before she emerges accompanied by the scent of flower petals."
+       alt="">   
+  </div>
+</div>
+
+<script>
+const thumbnails = document.querySelectorAll(".thumbnail-grid img");
+
+const mainImage = document.getElementById("main-image");
+const mainTitle = document.getElementById("main-title");
+const mainDesc = document.getElementById("main-desc");
+
+thumbnails.forEach(img => {
+  img.addEventListener("click", () => {
+
+    if (img.classList.contains("active")) return;
+
+    thumbnails.forEach(t => t.classList.remove("active"));
+    img.classList.add("active");
+
+    mainImage.style.opacity = 0;
+
+    setTimeout(() => {
+      mainImage.src = img.dataset.full;
+      mainImage.style.opacity = 1;
+    }, 120);
+
+    mainTitle.textContent = img.dataset.title;
+    mainDesc.textContent = img.dataset.desc;
+
+  });
+});
+</script>
+	
 </body>
 </html>
