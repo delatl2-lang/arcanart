@@ -31,6 +31,24 @@
 		background-position: center;
 		background-attachment: fixed;
 		margin: 0;
+	}#music-toggle {
+	    position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+	    z-index: 9999;
+	    padding: 10px 14px;
+	    border: none;
+	    border-radius: 8px;
+	    background: #232323;
+	    color: #FFF04D;
+	    font-family: 'Amarante', cursive;
+	    cursor: pointer;
+	    box-shadow: 0 0 10px #FFF04D;
+	    transition: transform 0.2s ease;
+	} #music-toggle:hover {
+	    transform: scale(1.05);
+		transform: rotate(360deg);
+			transition: 2s;
 	} #page {
 		width: 928px;
 		margin: 0 auto;
@@ -179,7 +197,11 @@
     }
 </style>
 </head>
+<audio id="bg-music" loop>
+  <source src="Cocktail%20Lounge%20-%20Dyalla.mp3" type="audio/mpeg">
+</audio>
 
+<button id="music-toggle">🎵</button>
 <body>
 	<div id="banner-container">
 		<img id="banner" src="pexels-miriamespacio-110854.jpg" alt="Space banner image"/> 
@@ -196,6 +218,7 @@
       <ul class="dropdown-menu">
         <li><a href="stellargy_magic_system.html">Stellargy Magic System</a></li>
         <li><a href="masqueraid_party.html">Masqueraid Party</a></li>
+		<li><a href="school_works.html">School Works</a></li>
       </ul>
     </li>
 	<li>
@@ -263,6 +286,61 @@ Even fictional characters can become a Flair as long as humans thought of it. Th
 </p>
 
 </div>
+<script>
+const music = document.getElementById("bg-music");
+const button = document.getElementById("music-toggle");
 
+// restore state across pages
+let shouldPlay = localStorage.getItem("musicPlaying") === "true";
+
+// ▶️ start music on click
+button.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    button.textContent = "⏸";
+    shouldPlay = true;
+    localStorage.setItem("musicPlaying", "true");
+  } else {
+    music.pause();
+    button.textContent = "🎵";
+    shouldPlay = false;
+    localStorage.setItem("musicPlaying", "false");
+  }
+});
+
+// 🔁 resume when page loads (new page navigation)
+window.addEventListener("load", () => {
+  if (shouldPlay) {
+    music.play().then(() => {
+      button.textContent = "⏸";
+    }).catch(() => {});
+  }
+});
+
+// ⏸ pause when switching tabs
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    music.pause();
+  } else {
+    if (shouldPlay) {
+      music.play().then(() => {
+        button.textContent = "⏸";
+      }).catch(() => {});
+    }
+  }
+});
+	const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".slide-in").forEach(el => {
+  observer.observe(el);
+});
+
+</script>
 </body>
 </html>
