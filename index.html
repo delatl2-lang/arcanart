@@ -22,6 +22,24 @@
 		background-position: center;
 		background-attachment: fixed;
 		margin: 0
+	}#music-toggle {
+	    position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+	    z-index: 9999;
+	    padding: 10px 14px;
+	    border: none;
+	    border-radius: 8px;
+	    background: #232323;
+	    color: #FFF04D;
+	    font-family: 'Amarante', cursive;
+	    cursor: pointer;
+	    box-shadow: 0 0 10px #FFF04D;
+	    transition: transform 0.2s ease;
+	} #music-toggle:hover {
+	    transform: scale(1.05);
+		transform: rotate(360deg);
+			transition: 2s;
 	} #page {
 		max-width: 928px;
 		margin: 0 auto;
@@ -118,12 +136,30 @@
 		line-height: 1.4em;
 		max-width: 828px;
 		margin: 0 auto;	
-	} video {
-		display: block;
-		width: 30%;
-		margin: 32px auto 0;
+	} .hero-section{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 120px;
+		margin: 40px auto;
+		max-width: 950px;
+	} video{
+		width: 420px;
+		margin: 0;
 		box-shadow: 0 0 6px #FFF04D,
 					0 0 12px #FFF04D;
+	} .pullquote{
+		font-family: 'Amarante', cursive;
+		font-size: 22pt;
+		font-style: italic;
+		color: white;
+		text-align: center;
+		width: 520px;
+		max-width: 55%;
+		border-top: 2px solid #FFF04D;
+		border-bottom: 2px solid #FFF04D;
+		text-shadow: 0 0 6px #FFF04D;
+		margin: 0;
 	} .container { /*BLACK CONTAINER*/
 		display: flex;
 		flex-wrap: wrap;
@@ -212,7 +248,11 @@
 
 </style>
 </head>
+<audio id="bg-music" loop>
+  <source src="Cocktail%20Lounge%20-%20Dyalla.mp3" type="audio/mpeg">
+</audio>
 
+<button id="music-toggle">🎵</button>
 <body>
 	<div id="banner-container">
 		<img id="banner" src="pexels-miriamespacio-110854.jpg" alt="Space banner image"/> 
@@ -229,6 +269,7 @@
       <ul class="dropdown-menu">
         <li><a href="stellargy_magic_system.html">Stellargy Magic System</a></li>
         <li><a href="masqueraid_party.html">Masqueraid Party</a></li>
+		<li><a href="school_works.html">School Works</a></li>
       </ul>
     </li>
 	<li>
@@ -249,9 +290,18 @@
 					<span class="title-text">ARCANART</span>
 				</a>
 			</header>
-	<video poster= "home-video-thumbnail.jpg" controls>
-	<source src="home-video.mp4">
-	</video>
+<div class="hero-section">
+
+    <div class="pullquote">
+        "For every art created, a story written, or achievement made, a star is born out of nothing, illuminating the vast empty universe. The moment we stop striving for something that has yet to exist is the moment the universe ends."
+    </div>
+
+    <video poster="home-video-thumbnail.jpg" controls>
+        <source src="home-video.mp4">
+    </video>
+
+</div>
+
 <div class="carousel">
   <div class="carousel-track">
 
@@ -282,7 +332,7 @@
   </a>
   <figcaption>Sol, Agent of Aurora</figcaption>
 </figure>
-    <!-- Duplicates -->
+	  
 <figure>
   <a href="luna-thumb.jpg" target="_blank">
     <img src="luna-thumb.jpg" alt="Luna the Dark Star"/>
@@ -312,6 +362,49 @@
 </figure>
   </div>
 </div>
+<script>
+const music = document.getElementById("bg-music");
+const button = document.getElementById("music-toggle");
 
+// restore state across pages
+let shouldPlay = localStorage.getItem("musicPlaying") === "true";
+
+// ▶️ start music on click
+button.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    button.textContent = "⏸";
+    shouldPlay = true;
+    localStorage.setItem("musicPlaying", "true");
+  } else {
+    music.pause();
+    button.textContent = "🎵";
+    shouldPlay = false;
+    localStorage.setItem("musicPlaying", "false");
+  }
+});
+
+// 🔁 resume when page loads (new page navigation)
+window.addEventListener("load", () => {
+  if (shouldPlay) {
+    music.play().then(() => {
+      button.textContent = "⏸";
+    }).catch(() => {});
+  }
+});
+
+// ⏸ pause when switching tabs
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    music.pause();
+  } else {
+    if (shouldPlay) {
+      music.play().then(() => {
+        button.textContent = "⏸";
+      }).catch(() => {});
+    }
+  }
+});
+</script>
 </body>
 </html>
